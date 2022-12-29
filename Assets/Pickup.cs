@@ -11,6 +11,7 @@ public class Pickup : MonoBehaviour
         {
             // Add XP to player - to be implemented
             Destroy(gameObject);
+            other.transform.GetComponent<PlayerController>().AddXp(5);
         }
     }
 }
