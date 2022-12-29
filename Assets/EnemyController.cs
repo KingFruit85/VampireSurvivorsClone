@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     Vector3 PlayerPosition;
-    float Speed = 2.0f;
+    float Speed = 1.0f;
 
     // Update is called once per frame
     void Update()

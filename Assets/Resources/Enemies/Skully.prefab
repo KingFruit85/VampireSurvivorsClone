@@ -12,9 +12,11 @@ GameObject:
   - component: {fileID: 7385563227702088520}
   - component: {fileID: 8779240310598427944}
   - component: {fileID: 6861671236951789982}
-  m_Layer: 0
+  - component: {fileID: 3168219593591528115}
+  - component: {fileID: -1199385313074777644}
+  m_Layer: 6
   m_Name: Skully
-  m_TagString: Untagged
+  m_TagString: Skully
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27,12 +29,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7387524138014639849}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.063399, y: 1.6996298, z: -0.085399605}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7385563227702088520
 SpriteRenderer:
@@ -158,3 +160,27 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &3168219593591528115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7387524138014639849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50fa0a693c5ab5d42bf0ddb1ebdace67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-1199385313074777644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7387524138014639849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a80cef141989306428e2139591caa577, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

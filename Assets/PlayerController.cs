@@ -3,11 +3,12 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
 
-    private float MoveX;
-    private float MoveY;
-    private float MoveSpeed = 2f;
-    private Vector2 Movement;
-    private Rigidbody2D Rigidbody2D;
+    float MoveX;
+    float MoveY;
+    float MoveSpeed = 2f;
+    Vector2 Movement;
+    Rigidbody2D Rigidbody2D;
+
 
     void Start()
     {

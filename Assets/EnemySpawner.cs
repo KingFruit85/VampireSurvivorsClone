@@ -5,35 +5,34 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     Vector3 PositionToSpawnEnemy;
-    Vector3 Offset;
     Vector2 PlayerPosition;
     public GameObject[] EnemyTypes;
     float TimeSinceLastEnemySpawn;
 
     void Start()
     {
-        // Always start with a low number to give a fresh run a chance?
-        SpawnPack(20);
+        SpawnPack();
     }
 
     void Update()
     {
         if ((TimeSinceLastEnemySpawn + 5.0f) <= Time.time)
         {
-            SpawnPack(20);
+            SpawnPack();
         }
     }
 
-    void SpawnPack(int numberToSpawn)
+    void SpawnPack()
     {
+        int NumberOfMobsToSpawn = Random.Range(5, 26);
         PlayerPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
-        PositionToSpawnEnemy = PlayerPosition + new Vector2(Random.Range(-3.0f, 3.9f), Random.Range(-5.0f, 5.9f));
+        PositionToSpawnEnemy = PlayerPosition + new Vector2(Random.Range(-15.9f, 15.9f), Random.Range(-15.9f, 15.9f));
 
         GameObject EnemyToSpawn = EnemyTypes[Random.Range(0, EnemyTypes.Length)];
 
-        for (int i = 0; i <= numberToSpawn; i++)
+        for (int i = 0; i <= NumberOfMobsToSpawn; i++)
         {
-            Vector3 OffsetPositionToSpawnEnemy = PositionToSpawnEnemy + new Vector3(Random.Range(-1.0f, 1.9f), Random.Range(-1.0f, 1.9f));
+            Vector3 OffsetPositionToSpawnEnemy = PositionToSpawnEnemy + new Vector3(Random.Range(-2.0f, 2.9f), Random.Range(-2.0f, 2.9f));
             GameObject mob = Instantiate(EnemyToSpawn, OffsetPositionToSpawnEnemy, Quaternion.identity);
         }
 
