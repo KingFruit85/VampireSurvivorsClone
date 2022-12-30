@@ -6,7 +6,7 @@ public class Thinkpad : MonoBehaviour
 {
     public Transform Target;
 
-    public float RotationSpeed = 5;
+    public float RotationSpeed = 7;
 
     public float CircleRadius = 1;
 
