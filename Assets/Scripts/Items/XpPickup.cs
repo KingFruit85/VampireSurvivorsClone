@@ -1,23 +1,29 @@
 using UnityEngine;
 
-public class XpPickup : MonoBehaviour, IXpPickupable 
+public class XpPickup : MonoBehaviour, IPickupable 
 {
-    public int xpAmount {get; private set;}
+    public int xpAmount;
 
-    // Start is called before the first frame update
-    private void OnTriggerEnter2D(Collider2D other)
+    public XpPickup(int amount) => xpAmount = amount;
+
+    public void OnPickup(Collider2D other)
     {
-        if (other.tag == "Player")
+        if (other.transform.TryGetComponent<PlayerExperience>(out var playerExperience))
         {
-            // Add XP to player - to be implemented
+            playerExperience.AddXp(xpAmount);
             Destroy(gameObject);
-            other.transform.GetComponent<PlayerController>().AddXp(5);
         }
     }
 
-    public void GiveXP(PlayerExperience playerExperience)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        playerExperience.AddXp(xpAmount);
-        Debug.Log("XP Given");
+        Debug.Log("here");
+        Debug.Log(other.tag);
+
+
+        if (other.tag == "Player")
+        {
+            OnPickup(other);
+        }
     }
 }

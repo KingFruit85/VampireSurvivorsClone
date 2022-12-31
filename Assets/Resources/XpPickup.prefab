@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1017224255658501202}
   - component: {fileID: 8197169509423731606}
   - component: {fileID: 7305250258403857325}
-  - component: {fileID: 1877886291396586184}
+  - component: {fileID: 6475572883718353126}
   m_Layer: 0
   m_Name: XpPickup
   m_TagString: Pickup
@@ -32,7 +32,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8197169509423731606
 SpriteRenderer:
@@ -121,7 +121,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.16
---- !u!114 &1877886291396586184
+--- !u!114 &6475572883718353126
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -130,6 +130,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6480944171254457606}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e1ebc48664dbff479761a2d94485478, type: 3}
+  m_Script: {fileID: 11500000, guid: 477bc0d191373a8409715f9cdaf6cb54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  xpAmount: 5
