@@ -1,9 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Pickup : MonoBehaviour
+public class XpPickup : MonoBehaviour, IXpPickupable 
 {
+    public int xpAmount {get; private set;}
+
     // Start is called before the first frame update
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -13,5 +13,11 @@ public class Pickup : MonoBehaviour
             Destroy(gameObject);
             other.transform.GetComponent<PlayerController>().AddXp(5);
         }
+    }
+
+    public void GiveXP(PlayerExperience playerExperience)
+    {
+        playerExperience.AddXp(xpAmount);
+        Debug.Log("XP Given");
     }
 }

@@ -17,6 +17,5 @@ public class FollowPlayer : MonoBehaviour
         PlayerPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
 
         Camera.transform.position = PlayerPosition;
-
     }
 }
