@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 3500501527277429347}
   - component: {fileID: 4463757924599009868}
-  - component: {fileID: 2428939133069900650}
   - component: {fileID: 5228242964878806056}
   - component: {fileID: 4048541155039372326}
-  - component: {fileID: 5993706862706085161}
+  - component: {fileID: 175068165498748984}
+  - component: {fileID: 9101918253334425236}
   m_Layer: 6
   m_Name: Crab
   m_TagString: Crab
@@ -88,18 +88,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2428939133069900650
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4005933176938656350}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50fa0a693c5ab5d42bf0ddb1ebdace67, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!70 &5228242964878806056
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -162,7 +150,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &5993706862706085161
+--- !u!114 &175068165498748984
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -171,6 +159,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 4005933176938656350}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a80cef141989306428e2139591caa577, type: 3}
+  m_Script: {fileID: 11500000, guid: fe52f6741c8033144914d0f8078d2e85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 20
+  currentHealth: 0
+--- !u!114 &9101918253334425236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4005933176938656350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcb5836357a25ea438e23c06622527c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

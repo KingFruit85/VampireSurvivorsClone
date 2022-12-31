@@ -14,6 +14,8 @@ public class Thinkpad : MonoBehaviour
 
     private Vector3 positionOffset;
     private float angle;
+    public int damage = 5;
+
 
     private void LateUpdate()
     {
@@ -28,10 +30,9 @@ public class Thinkpad : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.layer == 6)
+        if (other.gameObject.TryGetComponent<EnemyHealth>(out var enemyHealth))
         {
-            other.transform.TryGetComponent(out Health health);
-            health.TakeDamage(5);
+           enemyHealth.TakeDamage(damage);
         }
     }
 }

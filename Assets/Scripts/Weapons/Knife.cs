@@ -12,7 +12,8 @@ public class Knife : MonoBehaviour
     Vector3 Down = new Vector3(0, -1, 0);
     public float Speed = 0.05f;
     float TimeOfBirth;
-    public int Damage;
+    public int damage = 2;
+
     PlayerController PlayerController;
 
     // Start is called before the first frame update
@@ -20,7 +21,6 @@ public class Knife : MonoBehaviour
     {
         PlayerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         RigidBody2D = GetComponent<Rigidbody2D>();
-        Damage = 2;
         TimeOfBirth = Time.time;
         Fire();
     }
@@ -53,9 +53,9 @@ public class Knife : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.layer == 6)
+        if (other.gameObject.TryGetComponent<EnemyHealth>(out var enemyHealth))
         {
-            other.transform.GetComponent<Health>().TakeDamage(Damage);
+           enemyHealth.TakeDamage(damage);
         }
     }
 

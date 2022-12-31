@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 8832025640589697216}
   - component: {fileID: 6921171740028043233}
-  - component: {fileID: -8646168661417686126}
   - component: {fileID: 2106510604062892371}
   - component: {fileID: 748220439191886252}
-  - component: {fileID: 3643449555387972182}
+  - component: {fileID: 8129219552531260558}
+  - component: {fileID: 6041999961935442600}
   m_Layer: 6
   m_Name: Ghost
   m_TagString: Ghost
@@ -88,18 +88,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-8646168661417686126
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7783565922210201823}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50fa0a693c5ab5d42bf0ddb1ebdace67, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!70 &2106510604062892371
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -162,7 +150,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &3643449555387972182
+--- !u!114 &8129219552531260558
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -171,6 +159,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 7783565922210201823}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a80cef141989306428e2139591caa577, type: 3}
+  m_Script: {fileID: 11500000, guid: fcb5836357a25ea438e23c06622527c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6041999961935442600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7783565922210201823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe52f6741c8033144914d0f8078d2e85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 5
+  currentHealth: 0

@@ -77,9 +77,10 @@ GameObject:
   m_Component:
   - component: {fileID: 8965032950037079530}
   - component: {fileID: 8965032950037079529}
-  - component: {fileID: 8965032950037079528}
   - component: {fileID: 8965032950037079527}
-  - component: {fileID: 1339842263861730251}
+  - component: {fileID: 2221209828280662245}
+  - component: {fileID: 4028362655268517595}
+  - component: {fileID: 7023697029960954534}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -155,18 +156,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8965032950037079528
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8965032950037079526}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 553f70ee255c26d439374f5e5c2dd208, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!50 &8965032950037079527
 Rigidbody2D:
   serializedVersion: 4
@@ -194,7 +183,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &1339842263861730251
+--- !u!114 &2221209828280662245
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -203,6 +192,36 @@ MonoBehaviour:
   m_GameObject: {fileID: 8965032950037079526}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a80cef141989306428e2139591caa577, type: 3}
+  m_Script: {fileID: 11500000, guid: 09511b7d2e3051f4383bcb235419514e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MoveSpeed: 3
+  XP: 0
+  PlayerIsFacing: 0
+--- !u!114 &4028362655268517595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8965032950037079526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b942cd46b61daaa46937c79133117b09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentExperience: 0
+--- !u!114 &7023697029960954534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8965032950037079526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33eaca00ec0e53942b31b2cd4a30a42b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  currentHealth: 0

@@ -6,6 +6,7 @@ public class DamageAura : MonoBehaviour
 {
     [SerializeField]
     float TimeOfLastAttack;
+    public int damage = 5;
 
     void Start()
     {
@@ -17,11 +18,11 @@ public class DamageAura : MonoBehaviour
 
         if (Time.time >= (TimeOfLastAttack + 1.0f))
         {
-            Collider2D[] HitEnemies = Physics2D.OverlapCircleAll(transform.position, 2.0f, LayerMask.GetMask("Enemy"));
-            foreach (var collider in HitEnemies)
+            Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(transform.position, 2.0f, LayerMask.GetMask("Enemy"));
+            foreach (var collider in hitEnemies)
             {
-                collider.transform.TryGetComponent(out Health health);
-                health.TakeDamage(5);
+                collider.transform.TryGetComponent<EnemyHealth>(out var enemyHealth);
+                enemyHealth.TakeDamage(damage);
             }
             TimeOfLastAttack = Time.time;
         }
