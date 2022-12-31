@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class XpPickup : MonoBehaviour, IPickupable 
+public class XpPickup : MonoBehaviour, IPickupable
 {
     public int xpAmount;
 
@@ -17,10 +17,6 @@ public class XpPickup : MonoBehaviour, IPickupable
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("here");
-        Debug.Log(other.tag);
-
-
         if (other.tag == "Player")
         {
             OnPickup(other);
