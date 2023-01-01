@@ -10,14 +10,6 @@ public class EnemyHealth : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
-        // switch (transform.tag)
-        // {
-        //     case "Crab": Hitpoints = 20; break;
-        //     case "Ghost": Hitpoints = 5; break;
-        //     case "Skully": Hitpoints = 15; break;
-        //     case "Worm": Hitpoints = 10; break;
-        //     case "Player": Hitpoints = 100; break;
-        // }
     }
 
     void Update()
@@ -37,9 +29,12 @@ public class EnemyHealth : MonoBehaviour
 
     public void Heal(int amountToHeal)
     {
-        if (currentHealth + amountToHeal >= maxHealth) {
+        if (currentHealth + amountToHeal >= maxHealth)
+        {
             currentHealth = maxHealth;
-        } else {
+        }
+        else
+        {
             currentHealth += amountToHeal;
         }
     }

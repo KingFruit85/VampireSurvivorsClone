@@ -66438,7 +66438,7 @@ MonoBehaviour:
   m_Lens:
     FieldOfView: 60
     OrthographicSize: 689.6318
-    NearClipPlane: 0
+    NearClipPlane: 0.01
     FarClipPlane: 1000
     Dutch: 0
     ModeOverride: 0
@@ -66676,7 +66676,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2165635087199866701, guid: 40d3ff5825f00e041a257bf65267aca5, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2165635087199866703, guid: 40d3ff5825f00e041a257bf65267aca5, type: 3}
       propertyPath: m_RootOrder
