@@ -6,7 +6,7 @@ public class PlayerHealth : MonoBehaviour
     public int maxHealth = 100;
     public int currentHealth;
 
-    public static event Action<int> OnHealthChange;
+    public static event Action<int, int> OnHealthChange;
 
     void Start()
     {
@@ -20,29 +20,31 @@ public class PlayerHealth : MonoBehaviour
             //game over
             gameObject.SetActive(false);
         }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            TakeDamage(5);
+        }
     }
 
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
         DamagePopup.Create(transform.position, damage, false);
-        if (OnHealthChange != null) 
-        {
-            OnHealthChange(currentHealth);
-        }
+        OnHealthChange?.Invoke(currentHealth, maxHealth);
     }
 
     public void Heal(int amountToHeal)
     {
-        if (currentHealth + amountToHeal >= maxHealth) {
+        if (currentHealth + amountToHeal >= maxHealth) 
+        {
             currentHealth = maxHealth;
-        } else {
+        } 
+        else 
+        {
             currentHealth += amountToHeal;
         }
         
-        if (OnHealthChange != null) 
-        {
-            OnHealthChange(currentHealth);
-        }
+        OnHealthChange?.Invoke(currentHealth, maxHealth);
     }
 }
