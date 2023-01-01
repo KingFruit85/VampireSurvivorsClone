@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -18,7 +19,8 @@ public class PlayerHealth : MonoBehaviour
         if (currentHealth <= 0)
         {
             //game over
-            gameObject.SetActive(false);
+            // gameObject.SetActive(false);
+            SceneManager.LoadScene("Game");
         }
 
         if (Input.GetKeyDown(KeyCode.Space))
@@ -36,15 +38,15 @@ public class PlayerHealth : MonoBehaviour
 
     public void Heal(int amountToHeal)
     {
-        if (currentHealth + amountToHeal >= maxHealth) 
+        if (currentHealth + amountToHeal >= maxHealth)
         {
             currentHealth = maxHealth;
-        } 
-        else 
+        }
+        else
         {
             currentHealth += amountToHeal;
         }
-        
+
         OnHealthChange?.Invoke(currentHealth, maxHealth);
     }
 }
