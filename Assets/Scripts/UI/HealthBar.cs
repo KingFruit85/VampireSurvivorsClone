@@ -6,14 +6,16 @@ public class HealthBar : MonoBehaviour
   public Camera MainCamera;
   public Color Low;
   public Color High;
-  public float Offset;
+  public int MaxHealth;
+  public int CurrentHealth;
+  public float Offset = -0.5f;
   public GameObject Player;
   public Image HealthBarImage;
 
   private void Start() 
   {
     PlayerHealth.OnHealthChange += PlayerHealth_OnHealthChange;
-    var startHealth = transform.parent.GetComponent<PlayerHealth>().maxHealth;
+    var startHealth = Player.GetComponent<PlayerHealth>().maxHealth;
   }
 
   private void LateUpdate() 
@@ -23,7 +25,7 @@ public class HealthBar : MonoBehaviour
 
   private void PlayerHealth_OnHealthChange(int currentHealth, int maxHealth)
   {
-    HealthBarImage.fillAmount = 
-    HealthBarImage.color = Color.Lerp(Low, High, Slider.normalizedValue);
+    HealthBarImage.fillAmount = currentHealth / 100f;
+    HealthBarImage.color = Color.Lerp(Low, High, currentHealth / 100f);
   }
 }
