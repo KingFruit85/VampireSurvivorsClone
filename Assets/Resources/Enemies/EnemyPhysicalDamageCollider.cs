@@ -6,13 +6,13 @@ public class EnemyPhysicalDamageCollider : MonoBehaviour
 {
     public int AttackDamage;
     public float AttackCoolDown;
-    float TimeOfLastAttack;
+    public float TimeOfLastAttack;
     public bool IsTouchingPlayer = false;
     public PlayerHealth PlayerHealth;
 
     void Start()
     {
-        TimeOfLastAttack = Time.time;
+        TimeOfLastAttack = Time.timeSinceLevelLoad + 1f;
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -34,10 +34,11 @@ public class EnemyPhysicalDamageCollider : MonoBehaviour
 
     void Update()
     {
-        if (IsTouchingPlayer && Time.time >= (TimeOfLastAttack + AttackCoolDown))
+        if (IsTouchingPlayer && Time.timeSinceLevelLoad >= (TimeOfLastAttack + AttackCoolDown))
         {
             PlayerHealth.TakeDamage(AttackDamage);
-            TimeOfLastAttack = Time.time;
+            Debug.Log("got past TakeDamage");
+            TimeOfLastAttack = Time.timeSinceLevelLoad;
         }
     }
 }

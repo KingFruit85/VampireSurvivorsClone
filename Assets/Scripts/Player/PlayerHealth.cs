@@ -5,11 +5,11 @@ using UnityEngine.SceneManagement;
 public class PlayerHealth : MonoBehaviour
 {
     public int maxHealth = 100;
-    public int currentHealth;
+    public int currentHealth = 100;
 
     public static event Action<int, int> OnHealthChange;
 
-    void Start()
+    void Awake()
     {
         currentHealth = maxHealth;
     }
