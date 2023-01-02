@@ -16,7 +16,13 @@ public class EnemyHealth : MonoBehaviour
     {
         if (currentHealth <= 0)
         {
-            GameObject xp = Instantiate(Resources.Load<GameObject>("XpPickup"), transform.position, Quaternion.identity);
+
+            if ((Random.Range(0, 3) == 2))
+            {
+                GameObject xp = Instantiate(Resources.Load<GameObject>("XpPickup"), transform.position, Quaternion.identity);
+
+            }
+
             Destroy(gameObject);
         }
     }

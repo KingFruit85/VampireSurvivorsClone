@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Thinkpad : MonoBehaviour
+public class Thinkpad : MonoBehaviour, IAbility
 {
     public Transform Target;
 
@@ -14,8 +14,15 @@ public class Thinkpad : MonoBehaviour
 
     private Vector3 positionOffset;
     private float angle;
-    public int damage = 5;
+    public int Damage = 5;
+    public Sprite Icon;
+    public const string AbilityName = "ThinkPad";
+    public const string Description = "Circles around the player damaging enemies that touch it";
 
+    void Awake()
+    {
+        Target = GameObject.FindGameObjectWithTag("Player").transform;
+    }
 
     private void LateUpdate()
     {
@@ -32,7 +39,27 @@ public class Thinkpad : MonoBehaviour
     {
         if (other.gameObject.TryGetComponent<EnemyHealth>(out var enemyHealth))
         {
-           enemyHealth.TakeDamage(damage);
+            enemyHealth.TakeDamage(Damage);
         }
+    }
+
+    public string GetAbilityName()
+    {
+        return AbilityName;
+    }
+
+    public string GetAbilityDescription()
+    {
+        return Description;
+    }
+
+    public Sprite GetAbilityIcon()
+    {
+        return Icon;
+    }
+
+    public int GetAbilityDamage()
+    {
+        return Damage;
     }
 }
