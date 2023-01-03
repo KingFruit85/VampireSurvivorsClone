@@ -9,12 +9,36 @@ public class LevelUpPanelManager : MonoBehaviour
 {
     public List<GameObject> LevelUpAbilities;
 
+    public GameObject Panel;
     public GameObject OptionOne;
     public GameObject OptionTwo;
     public GameObject OptionThree;
     public GameObject OptionFour;
 
     public List<GameObject> PickedAbilities;
+
+    void Start()
+    {
+        PlayerExperience.LevelUpEvent += PlayerExperience_OnLevelUpEvent;
+    }
+
+    void PlayerExperience_OnLevelUpEvent(bool isLevelUp)
+    {
+        if (isLevelUp)
+        {
+            EnableLevelUpPanel();
+        }
+    }
+
+    public void EnableLevelUpPanel()
+    {
+        Panel.SetActive(true);
+    }
+
+    public void DisableLevelUpPanel()
+    {
+        Panel.SetActive(false);
+    }
 
     void OnEnable()
     {

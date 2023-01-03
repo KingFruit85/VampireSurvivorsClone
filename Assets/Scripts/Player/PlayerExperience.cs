@@ -1,10 +1,11 @@
+using System;
 using UnityEngine;
 
 public class PlayerExperience : MonoBehaviour
 {
     public int currentExperience;
     public int XPToNextLevelUp;
-    public GameObject LevelUpPanel;
+    public static event Action<bool> LevelUpEvent;
 
     private void Start()
     {
@@ -14,20 +15,13 @@ public class PlayerExperience : MonoBehaviour
 
     public void AddXp(int amountToAdd)
     {
+        LevelUpEvent.Invoke(false);
+
         currentExperience += amountToAdd;
-    }
-
-    void LevelUp()
-    {
-        LevelUpPanel.SetActive(true);
-        XPToNextLevelUp += 50;
-    }
-
-    void Update()
-    {
         if (currentExperience >= XPToNextLevelUp)
         {
-            LevelUp();
+            LevelUpEvent.Invoke(true);
+            XPToNextLevelUp += 50;
         }
     }
 }
