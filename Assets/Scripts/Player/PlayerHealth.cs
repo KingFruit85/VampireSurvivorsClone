@@ -19,7 +19,6 @@ public class PlayerHealth : MonoBehaviour
         if (currentHealth <= 0)
         {
             //game over
-            // gameObject.SetActive(false);
             SceneManager.LoadScene("Game");
         }
 

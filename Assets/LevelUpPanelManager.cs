@@ -22,12 +22,9 @@ public class LevelUpPanelManager : MonoBehaviour
         PlayerExperience.LevelUpEvent += PlayerExperience_OnLevelUpEvent;
     }
 
-    void PlayerExperience_OnLevelUpEvent(bool isLevelUp)
+    void PlayerExperience_OnLevelUpEvent()
     {
-        if (isLevelUp)
-        {
-            EnableLevelUpPanel();
-        }
+        EnableLevelUpPanel();
     }
 
     public void EnableLevelUpPanel()
