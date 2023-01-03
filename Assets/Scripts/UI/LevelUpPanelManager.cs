@@ -20,6 +20,11 @@ public class LevelUpPanelManager : MonoBehaviour
     void Start()
     {
         PlayerExperience.LevelUpEvent += PlayerExperience_OnLevelUpEvent;
+        PlayerHealth.GameOver += PlayerHealth_OnGameover;
+    }
+    void PlayerHealth_OnGameover()
+    {
+        PlayerExperience.LevelUpEvent -= PlayerExperience_OnLevelUpEvent;
     }
 
     void PlayerExperience_OnLevelUpEvent()

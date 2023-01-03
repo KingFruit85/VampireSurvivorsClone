@@ -8,6 +8,7 @@ public class PlayerHealth : MonoBehaviour
     public int currentHealth = 100;
 
     public static event Action<int, int> OnHealthChange;
+    public static event Action GameOver;
 
     void Awake()
     {
@@ -19,6 +20,7 @@ public class PlayerHealth : MonoBehaviour
         if (currentHealth <= 0)
         {
             //game over
+            GameOver?.Invoke();
             SceneManager.LoadScene("Game");
         }
 
