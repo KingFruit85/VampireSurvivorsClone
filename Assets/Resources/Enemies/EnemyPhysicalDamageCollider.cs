@@ -37,7 +37,6 @@ public class EnemyPhysicalDamageCollider : MonoBehaviour
         if (IsTouchingPlayer && Time.timeSinceLevelLoad >= (TimeOfLastAttack + AttackCoolDown))
         {
             PlayerHealth.TakeDamage(AttackDamage);
-            Debug.Log("got past TakeDamage");
             TimeOfLastAttack = Time.timeSinceLevelLoad;
         }
     }

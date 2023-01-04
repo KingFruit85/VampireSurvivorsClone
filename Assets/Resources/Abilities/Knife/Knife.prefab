@@ -33,7 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8009230149508712120
 SpriteRenderer:
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 0788008edf4717d46be40ba15def7a96, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -96,11 +96,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 8009230149508712121}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86155dd8f90190e4e9d3265e50a8f4ab, type: 3}
+  m_Script: {fileID: 11500000, guid: 8da6227119d65f44ebd35ce9ea18c08d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 0.05
-  Damage: 2
+  damage: 2
 --- !u!50 &63254104422092303
 Rigidbody2D:
   serializedVersion: 4

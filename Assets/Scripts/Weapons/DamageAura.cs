@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DamageAura : MonoBehaviour
+public class DamageAura : MonoBehaviour, IAbility
 {
-    [SerializeField]
     float TimeOfLastAttack;
-    public int damage = 5;
+    public int Damage = 5;
+    public Sprite Icon;
+    public const string AbilityName = "Damage Aura";
+    public const string Description = "A damaging aura surrounding the player";
 
     void Start()
     {
@@ -22,9 +24,29 @@ public class DamageAura : MonoBehaviour
             foreach (var collider in hitEnemies)
             {
                 collider.transform.TryGetComponent<EnemyHealth>(out var enemyHealth);
-                enemyHealth.TakeDamage(damage);
+                enemyHealth.TakeDamage(Damage);
             }
             TimeOfLastAttack = Time.time;
         }
+    }
+
+    public string GetAbilityName()
+    {
+        return AbilityName;
+    }
+
+    public string GetAbilityDescription()
+    {
+        return Description;
+    }
+
+    public Sprite GetAbilityIcon()
+    {
+        return Icon;
+    }
+
+    public int GetAbilityDamage()
+    {
+        return Damage;
     }
 }

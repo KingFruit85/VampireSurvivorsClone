@@ -58,11 +58,6 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    public void AddXp(int xp)
-    {
-        XP += xp;
-    }
-
     public Direction GetCurrentPlayerDirection()
     {
         return PlayerIsFacing;
