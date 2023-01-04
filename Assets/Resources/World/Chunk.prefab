@@ -5029,7 +5029,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 576432098676455154}
-  - component: {fileID: 6974223909953058067}
+  - component: {fileID: 5483156300560995592}
   m_Layer: 0
   m_Name: West
   m_TagString: Untagged
@@ -5052,7 +5052,7 @@ Transform:
   m_Father: {fileID: 576432100475951064}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6974223909953058067
+--- !u!114 &5483156300560995592
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5061,10 +5061,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 576432098676455157}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8887ddc33ce9ff418ff70a500f66551, type: 3}
+  m_Script: {fileID: 11500000, guid: 1e0637f5fb61a0649a8edbe7ee91283d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   MyProbe: {fileID: 3468627317138082919}
+  lookRadius: 8.5
 --- !u!1 &576432098680637846
 GameObject:
   m_ObjectHideFlags: 0
@@ -5894,7 +5895,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 576432098700983846}
-  - component: {fileID: 5616078266097617189}
+  - component: {fileID: 6094856901622353627}
   m_Layer: 0
   m_Name: SouthEast
   m_TagString: Untagged
@@ -5917,7 +5918,7 @@ Transform:
   m_Father: {fileID: 576432100475951064}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5616078266097617189
+--- !u!114 &6094856901622353627
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5926,10 +5927,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 576432098700983849}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8887ddc33ce9ff418ff70a500f66551, type: 3}
+  m_Script: {fileID: 11500000, guid: 1e0637f5fb61a0649a8edbe7ee91283d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   MyProbe: {fileID: 7201335838263496811}
+  lookRadius: 8.5
 --- !u!1 &576432098702299848
 GameObject:
   m_ObjectHideFlags: 0
@@ -19823,7 +19825,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 576432099313185947}
-  - component: {fileID: 2128190740250930569}
+  - component: {fileID: 1988072598087073176}
   m_Layer: 0
   m_Name: South
   m_TagString: Untagged
@@ -19846,7 +19848,7 @@ Transform:
   m_Father: {fileID: 576432100475951064}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2128190740250930569
+--- !u!114 &1988072598087073176
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -19855,10 +19857,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 576432099313185946}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8887ddc33ce9ff418ff70a500f66551, type: 3}
+  m_Script: {fileID: 11500000, guid: 1e0637f5fb61a0649a8edbe7ee91283d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   MyProbe: {fileID: 1824758114674938878}
+  lookRadius: 8.5
 --- !u!1 &576432099316433733
 GameObject:
   m_ObjectHideFlags: 0
@@ -26672,7 +26675,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 576432099598682354}
-  - component: {fileID: 464800648809877834}
+  - component: {fileID: 8332020830201272805}
   m_Layer: 0
   m_Name: SouthWest
   m_TagString: Untagged
@@ -26695,7 +26698,7 @@ Transform:
   m_Father: {fileID: 576432100475951064}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &464800648809877834
+--- !u!114 &8332020830201272805
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -26704,10 +26707,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 576432099598682357}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8887ddc33ce9ff418ff70a500f66551, type: 3}
+  m_Script: {fileID: 11500000, guid: 1e0637f5fb61a0649a8edbe7ee91283d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MyProbe: {fileID: 4529596320096850135}
+  MyProbe: {fileID: 6081259902648705539}
+  lookRadius: 8.5
 --- !u!1 &576432099605621698
 GameObject:
   m_ObjectHideFlags: 0
@@ -28481,7 +28485,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 576432099675787102}
-  - component: {fileID: 8839252408434920185}
+  - component: {fileID: 708285306210142488}
   m_Layer: 0
   m_Name: NorthEast
   m_TagString: Untagged
@@ -28504,7 +28508,7 @@ Transform:
   m_Father: {fileID: 576432100475951064}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8839252408434920185
+--- !u!114 &708285306210142488
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -28513,10 +28517,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 576432099675787105}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8887ddc33ce9ff418ff70a500f66551, type: 3}
+  m_Script: {fileID: 11500000, guid: 1e0637f5fb61a0649a8edbe7ee91283d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   MyProbe: {fileID: 2069656149010244104}
+  lookRadius: 8.5
 --- !u!1 &576432099678501529
 GameObject:
   m_ObjectHideFlags: 0
@@ -31634,7 +31639,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 576432099809715343}
-  - component: {fileID: 7882978028365278234}
+  - component: {fileID: 3227597753501281605}
   m_Layer: 0
   m_Name: North
   m_TagString: Untagged
@@ -31657,7 +31662,7 @@ Transform:
   m_Father: {fileID: 576432100475951064}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7882978028365278234
+--- !u!114 &3227597753501281605
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -31666,10 +31671,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 576432099809715342}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8887ddc33ce9ff418ff70a500f66551, type: 3}
+  m_Script: {fileID: 11500000, guid: 1e0637f5fb61a0649a8edbe7ee91283d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   MyProbe: {fileID: 1250580130645562479}
+  lookRadius: 8.5
 --- !u!1 &576432099813446026
 GameObject:
   m_ObjectHideFlags: 0
@@ -35103,7 +35109,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 576432099940281531}
-  - component: {fileID: 3627805891111956305}
+  - component: {fileID: 5731351771643192928}
   m_Layer: 0
   m_Name: East
   m_TagString: Untagged
@@ -35126,7 +35132,7 @@ Transform:
   m_Father: {fileID: 576432100475951064}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3627805891111956305
+--- !u!114 &5731351771643192928
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -35135,10 +35141,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 576432099940281530}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8887ddc33ce9ff418ff70a500f66551, type: 3}
+  m_Script: {fileID: 11500000, guid: 1e0637f5fb61a0649a8edbe7ee91283d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   MyProbe: {fileID: 5381657406017808316}
+  lookRadius: 8.5
 --- !u!1 &576432099947809239
 GameObject:
   m_ObjectHideFlags: 0
@@ -40128,7 +40135,7 @@ Transform:
   - {fileID: 576432100475951064}
   - {fileID: 576432098766639382}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &576432100167637475
 MonoBehaviour:
@@ -42657,7 +42664,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 576432100223515994}
-  - component: {fileID: 8355957053034177730}
+  - component: {fileID: 8767725519225079882}
   m_Layer: 0
   m_Name: NorthWest
   m_TagString: Untagged
@@ -42680,7 +42687,7 @@ Transform:
   m_Father: {fileID: 576432100475951064}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8355957053034177730
+--- !u!114 &8767725519225079882
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -42689,10 +42696,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 576432100223515997}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8887ddc33ce9ff418ff70a500f66551, type: 3}
+  m_Script: {fileID: 11500000, guid: 1e0637f5fb61a0649a8edbe7ee91283d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   MyProbe: {fileID: 4529596320096850135}
+  lookRadius: 8.5
 --- !u!1 &576432100225606129
 GameObject:
   m_ObjectHideFlags: 0
@@ -50877,7 +50885,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1857830880465203970}
-  - component: {fileID: 8420934891233140850}
+  - component: {fileID: 6521507146290589359}
   m_Layer: 0
   m_Name: North Probe
   m_TagString: Untagged
@@ -50900,7 +50908,7 @@ Transform:
   m_Father: {fileID: 576432100475951064}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8420934891233140850
+--- !u!114 &6521507146290589359
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -50909,7 +50917,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1250580130645562479}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99a154d7ca0bc0441a9ef6e62e5668df, type: 3}
+  m_Script: {fileID: 11500000, guid: bce8718409e77a34e9916a30a058f593, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   ProbeResults: []
@@ -50922,7 +50930,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1037251197522897001}
-  - component: {fileID: 8993967448723269689}
+  - component: {fileID: 6164691174771130594}
   m_Layer: 0
   m_Name: South Probe
   m_TagString: Untagged
@@ -50945,7 +50953,7 @@ Transform:
   m_Father: {fileID: 576432100475951064}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8993967448723269689
+--- !u!114 &6164691174771130594
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -50954,7 +50962,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1824758114674938878}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99a154d7ca0bc0441a9ef6e62e5668df, type: 3}
+  m_Script: {fileID: 11500000, guid: bce8718409e77a34e9916a30a058f593, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   ProbeResults: []
@@ -50967,7 +50975,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3751787402522795768}
-  - component: {fileID: 1396424013634329979}
+  - component: {fileID: 3615339866260258468}
   m_Layer: 0
   m_Name: NorthEast Probe
   m_TagString: Untagged
@@ -50990,7 +50998,7 @@ Transform:
   m_Father: {fileID: 576432100475951064}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1396424013634329979
+--- !u!114 &3615339866260258468
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -50999,7 +51007,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2069656149010244104}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99a154d7ca0bc0441a9ef6e62e5668df, type: 3}
+  m_Script: {fileID: 11500000, guid: bce8718409e77a34e9916a30a058f593, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   ProbeResults: []
@@ -51012,7 +51020,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2557314320025567717}
-  - component: {fileID: 71754753790759069}
+  - component: {fileID: 8397656996027352995}
   m_Layer: 0
   m_Name: West Probe
   m_TagString: Untagged
@@ -51035,7 +51043,7 @@ Transform:
   m_Father: {fileID: 576432100475951064}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &71754753790759069
+--- !u!114 &8397656996027352995
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -51044,7 +51052,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3468627317138082919}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99a154d7ca0bc0441a9ef6e62e5668df, type: 3}
+  m_Script: {fileID: 11500000, guid: bce8718409e77a34e9916a30a058f593, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   ProbeResults: []
@@ -51057,7 +51065,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5165109060444044631}
-  - component: {fileID: 5311352252690783218}
+  - component: {fileID: 7945716707180866699}
   m_Layer: 0
   m_Name: NorthWest Probe
   m_TagString: Untagged
@@ -51080,7 +51088,7 @@ Transform:
   m_Father: {fileID: 576432100475951064}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5311352252690783218
+--- !u!114 &7945716707180866699
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -51089,7 +51097,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4529596320096850135}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99a154d7ca0bc0441a9ef6e62e5668df, type: 3}
+  m_Script: {fileID: 11500000, guid: bce8718409e77a34e9916a30a058f593, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   ProbeResults: []
@@ -51102,7 +51110,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3704001614905036561}
-  - component: {fileID: 2745596379341305188}
+  - component: {fileID: 3455534963782167729}
   m_Layer: 0
   m_Name: East Probe
   m_TagString: Untagged
@@ -51125,7 +51133,7 @@ Transform:
   m_Father: {fileID: 576432100475951064}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2745596379341305188
+--- !u!114 &3455534963782167729
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -51134,7 +51142,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5381657406017808316}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99a154d7ca0bc0441a9ef6e62e5668df, type: 3}
+  m_Script: {fileID: 11500000, guid: bce8718409e77a34e9916a30a058f593, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   ProbeResults: []
@@ -51147,7 +51155,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5154573493773934791}
-  - component: {fileID: 2472532263568473933}
+  - component: {fileID: 6815496963423285133}
   m_Layer: 0
   m_Name: SouthWest Probe
   m_TagString: Untagged
@@ -51170,7 +51178,7 @@ Transform:
   m_Father: {fileID: 576432100475951064}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2472532263568473933
+--- !u!114 &6815496963423285133
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -51179,7 +51187,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6081259902648705539}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99a154d7ca0bc0441a9ef6e62e5668df, type: 3}
+  m_Script: {fileID: 11500000, guid: bce8718409e77a34e9916a30a058f593, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   ProbeResults: []
@@ -51192,7 +51200,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4618539448998857969}
-  - component: {fileID: 5180044425624897898}
+  - component: {fileID: 19947400473146812}
   m_Layer: 0
   m_Name: SouthEast Probe
   m_TagString: Untagged
@@ -51215,7 +51223,7 @@ Transform:
   m_Father: {fileID: 576432100475951064}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5180044425624897898
+--- !u!114 &19947400473146812
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -51224,7 +51232,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7201335838263496811}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99a154d7ca0bc0441a9ef6e62e5668df, type: 3}
+  m_Script: {fileID: 11500000, guid: bce8718409e77a34e9916a30a058f593, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   ProbeResults: []
