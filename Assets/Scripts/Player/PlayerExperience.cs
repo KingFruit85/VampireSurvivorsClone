@@ -6,6 +6,7 @@ public class PlayerExperience : MonoBehaviour
     public int currentExperience;
     public int XPToNextLevelUp;
     public static event Action LevelUpEvent;
+    public static event Action<int> ExperienceChange;
 
     private void Start()
     {
@@ -15,8 +16,8 @@ public class PlayerExperience : MonoBehaviour
 
     public void AddXp(int amountToAdd)
     {
-
         currentExperience += amountToAdd;
+        ExperienceChange?.Invoke(currentExperience);
         if (currentExperience >= XPToNextLevelUp)
         {
             LevelUpEvent?.Invoke();

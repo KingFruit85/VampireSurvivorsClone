@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,7 @@ public class EnemyHealth : MonoBehaviour
 {
     public int maxHealth;
     public int currentHealth;
+    public static event Action MonsterDeath;
 
     void Start()
     {
@@ -17,12 +19,12 @@ public class EnemyHealth : MonoBehaviour
         if (currentHealth <= 0)
         {
 
-            if ((Random.Range(0, 3) == 2))
+            if ((UnityEngine.Random.Range(0, 3) == 2))
             {
                 GameObject xp = Instantiate(Resources.Load<GameObject>("XpPickup"), transform.position, Quaternion.identity);
 
             }
-
+            MonsterDeath?.Invoke();
             Destroy(gameObject);
         }
     }
