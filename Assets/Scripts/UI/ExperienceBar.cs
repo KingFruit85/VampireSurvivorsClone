@@ -7,8 +7,7 @@ using UnityEngine.UI;
 public class ExperienceBar : MonoBehaviour
 {
     public Camera MainCamera;
-    public GameObject Player;
-    public Image ExperienceBarImage;
+    public Slider experienceBar;
     public TMP_Text LevelUpText;
     public int PlayerLevel = 1;
 
@@ -16,19 +15,20 @@ public class ExperienceBar : MonoBehaviour
     {
         PlayerExperience.ExperienceChange += PlayerExperience_OnExperienceChange;
         PlayerExperience.LevelUpEvent += PlayerExperience_OnLevelUpEvent;
-        ExperienceBarImage.fillAmount = 0f;
         LevelUpText.text = $"LV {PlayerLevel}";
     }
 
-    void PlayerExperience_OnExperienceChange(int currentExperience)
+    void PlayerExperience_OnExperienceChange(int currentExperience, int XPToNextLevelUp)
     {
-        ExperienceBarImage.fillAmount = currentExperience / 100f;
+        float experiencePercentage = (float)currentExperience / XPToNextLevelUp;
+        experienceBar.value = experiencePercentage;
     }
 
     void PlayerExperience_OnLevelUpEvent()
     {
         PlayerLevel++;
         LevelUpText.text = $"LV {PlayerLevel}";
+        // experienceBar.value = 0;
     }
 
 }
