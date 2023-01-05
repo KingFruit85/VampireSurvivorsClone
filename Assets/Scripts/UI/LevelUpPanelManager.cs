@@ -61,7 +61,7 @@ public class LevelUpPanelManager : MonoBehaviour
         PickedAbilities[0].transform.GetComponent<IAbility>().GetAbilityName();
 
         OptionOne.transform.Find("AbilityDescription").GetComponent<TMP_Text>().text =
-        PickedAbilities[0].transform.GetComponent<IAbility>().GetAbilityDescription();
+        PickedAbilities[0].transform.GetComponent<IAbility>().GetAbilityDescription(1); // placeholder level
 
         // TODO: Check player object for existing abilities to determine if the New tag should be enabled/disabled
 
@@ -73,7 +73,7 @@ public class LevelUpPanelManager : MonoBehaviour
         PickedAbilities[1].transform.GetComponent<IAbility>().GetAbilityName();
 
         OptionTwo.transform.Find("AbilityDescription").GetComponent<TMP_Text>().text =
-        PickedAbilities[1].transform.GetComponent<IAbility>().GetAbilityDescription();
+        PickedAbilities[1].transform.GetComponent<IAbility>().GetAbilityDescription(1); // placeholder level
 
         // Set Third button details
         OptionThree.transform.Find("AbilityIcon").GetComponent<Image>().sprite =
@@ -83,7 +83,7 @@ public class LevelUpPanelManager : MonoBehaviour
         PickedAbilities[2].transform.GetComponent<IAbility>().GetAbilityName();
 
         OptionThree.transform.Find("AbilityDescription").GetComponent<TMP_Text>().text =
-        PickedAbilities[2].transform.GetComponent<IAbility>().GetAbilityDescription();
+        PickedAbilities[2].transform.GetComponent<IAbility>().GetAbilityDescription(1); // placeholder level
 
         // TODO: Set Forth button details if the players luck is high enough
 

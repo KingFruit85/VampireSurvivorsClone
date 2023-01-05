@@ -13,10 +13,10 @@ public class Knife : MonoBehaviour
     public float Speed = 0.05f;
     float TimeOfBirth;
     public int damage = 2;
-
+    int hitEnemies = 0;
+    int numberOfHitEnemiesAllowed = 1;
     PlayerController PlayerController;
 
-    // Start is called before the first frame update
     void Start()
     {
         PlayerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
@@ -55,7 +55,13 @@ public class Knife : MonoBehaviour
     {
         if (other.gameObject.TryGetComponent<EnemyHealth>(out var enemyHealth))
         {
-           enemyHealth.TakeDamage(damage);
+            enemyHealth.TakeDamage(damage);
+            hitEnemies++;
+
+            if (hitEnemies == numberOfHitEnemiesAllowed)
+            {
+                Destroy(gameObject);
+            }
         }
     }
 
@@ -67,4 +73,10 @@ public class Knife : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    public void AddSpeed(float speed)
+    {
+        Speed += speed;
+    }
+
 }
