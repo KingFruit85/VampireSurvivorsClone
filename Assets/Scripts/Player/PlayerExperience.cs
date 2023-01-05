@@ -21,6 +21,7 @@ public class PlayerExperience : MonoBehaviour
         if (currentExperience >= XPToNextLevelUp)
         {
             LevelUpEvent?.Invoke();
+            currentExperience = 0;
             XPToNextLevelUp += 50;
         }
     }

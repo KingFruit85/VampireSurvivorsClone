@@ -28,7 +28,7 @@ public class ExperienceBar : MonoBehaviour
     {
         PlayerLevel++;
         LevelUpText.text = $"LV {PlayerLevel}";
-        // experienceBar.value = 0;
+        experienceBar.value = 0;
     }
 
 }
