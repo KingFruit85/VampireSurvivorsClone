@@ -1,11 +1,12 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DamageAura : MonoBehaviour, IAbility
+public class DamageAuraWeapon : MonoBehaviour, IAbility
 {
     float TimeOfLastAttack;
-    public int Damage = 2;
+    public float Damage = 2;
     public Sprite Icon;
     public float AuraRadius = 2.0f;
     public const string AbilityName = "Damage Aura";
@@ -18,6 +19,20 @@ public class DamageAura : MonoBehaviour, IAbility
     void Start()
     {
         TimeOfLastAttack = Time.time;
+        AttackDamageIncrease.DamageIncrease += AttackDamageIncrease_OnDamageIncrease;
+    }
+
+    void OnDestroy()
+    {
+        AttackDamageIncrease.DamageIncrease -= AttackDamageIncrease_OnDamageIncrease;
+    }
+
+
+    void AttackDamageIncrease_OnDamageIncrease(float increase)
+    {
+        Debug.Log($"Increasing damage for {gameObject.name}");
+        increase = Damage * increase;
+        Damage += increase;
     }
 
     void Update()
@@ -79,5 +94,11 @@ public class DamageAura : MonoBehaviour, IAbility
                 AuraRadius += 1f;
                 break;
         }
+        CurrentAbilityLevel++;
+    }
+
+    public int GetAbilityLevel()
+    {
+        return CurrentAbilityLevel;
     }
 }

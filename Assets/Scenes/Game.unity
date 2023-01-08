@@ -187,7 +187,8 @@ MonoBehaviour:
   LevelUpAbilities:
   - {fileID: 1920806079901204610, guid: fb3606b9c14b1384481225ab80684c55, type: 3}
   - {fileID: 6073175899078187415, guid: 9e31628291c38c34588e52188594d4e5, type: 3}
-  - {fileID: 4116960617599252238, guid: 1b66096947ad926449eed604b7b89a60, type: 3}
+  - {fileID: 3367182866794753710, guid: 1b66096947ad926449eed604b7b89a60, type: 3}
+  - {fileID: 8223132947474652701, guid: 9ec7b3d7c3a19d8498f49660a3afa2e7, type: 3}
   Panel: {fileID: 1557180444}
   OptionOne: {fileID: 516726664}
   OptionTwo: {fileID: 937310128}
@@ -1257,55 +1258,6 @@ Transform:
   m_Father: {fileID: 1300108787}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &605899941
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 605899942}
-  - component: {fileID: 605899943}
-  m_Layer: 0
-  m_Name: ThinkPadWeapon
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &605899942
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 605899941}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 568.4943, y: 406.47302, z: -6.892652}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &605899943
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 605899941}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bfb9a1713d792c04fa6c473087a35166, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CurrentAbilityLevel: 1
-  Icon: {fileID: 0}
-  ThinkPad: {fileID: 0}
-  ThinkPads: []
-  Player: {fileID: 0}
 --- !u!1 &626897257
 GameObject:
   m_ObjectHideFlags: 0

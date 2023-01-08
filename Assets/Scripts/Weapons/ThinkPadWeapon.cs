@@ -23,6 +23,7 @@ public class ThinkPadWeapon : MonoBehaviour, IAbility
     void AddThinkPadToOrbit()
     {
         GameObject newPad = Instantiate(ThinkPad, Player.transform.position, Quaternion.identity, Player.transform);
+        newPad.name = ThinkPad.name;
         ThinkPads.Add(newPad);
     }
 
@@ -70,5 +71,11 @@ public class ThinkPadWeapon : MonoBehaviour, IAbility
                     break;
             }
         }
+        CurrentAbilityLevel++;
+    }
+
+    public int GetAbilityLevel()
+    {
+        return CurrentAbilityLevel;
     }
 }

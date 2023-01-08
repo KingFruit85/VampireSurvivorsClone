@@ -8,4 +8,6 @@ public interface IAbility
     public string GetAbilityDescription(int level);
     public Sprite GetAbilityIcon();
     public void LevelUpAbility();
+    public int GetAbilityLevel();
+
 }

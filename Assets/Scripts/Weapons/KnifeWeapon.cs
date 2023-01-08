@@ -1,13 +1,14 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KnifeShooter : MonoBehaviour, IAbility
+public class KnifeWeapon : MonoBehaviour, IAbility
 {
     public GameObject Player;
     float TimeOfLastAttack;
     public float AttackDelay;
-    public int Damage = 2;
+    public float Damage = 4;
     public Sprite Icon;
     public int CurrentAbilityLevel = 1;
     public const string AbilityName = "Throwing Knives";
@@ -21,6 +22,29 @@ public class KnifeShooter : MonoBehaviour, IAbility
     void Awake()
     {
         Player = GameObject.FindGameObjectWithTag("Player");
+        AttackDamageIncrease.DamageIncrease += AttackDamageIncrease_OnDamageIncrease;
+    }
+
+    void Start()
+    {
+        Knives.Add(Knife);
+        Shoot();
+    }
+
+    void OnDestory()
+    {
+        AttackDamageIncrease.DamageIncrease -= AttackDamageIncrease_OnDamageIncrease;
+    }
+
+    void AttackDamageIncrease_OnDamageIncrease(float increase)
+    {
+        foreach (var knife in Knives)
+        {
+            increase = Damage * increase;
+            Damage += increase;
+            knife.GetComponent<Knife>().AddDamage(Damage);
+            Debug.Log($"Increasing damage for {knife.name}");
+        }
     }
 
     void AddKnife()
@@ -29,11 +53,16 @@ public class KnifeShooter : MonoBehaviour, IAbility
         Knives.Add(newKnife);
     }
 
-    void Start()
+    void Shoot()
     {
-        Instantiate(Knife, Player.transform.position, Quaternion.identity);
+        foreach (var knive in Knives)
+        {
+            Instantiate(knive, Player.transform.position, Quaternion.identity, Player.transform);
+        }
         TimeOfLastAttack = Time.time;
     }
+
+
 
     // Update is called once per frame
     void Update()
@@ -87,5 +116,11 @@ public class KnifeShooter : MonoBehaviour, IAbility
                     break;
             }
         }
+        CurrentAbilityLevel++;
+    }
+
+    public int GetAbilityLevel()
+    {
+        return CurrentAbilityLevel;
     }
 }

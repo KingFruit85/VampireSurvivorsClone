@@ -13,7 +13,7 @@ public class DamagePopup : MonoBehaviour
     }
 
     //Create a Damage Popup
-    public static DamagePopup Create(Vector3 position, int damageAmount, bool isCrit)
+    public static DamagePopup Create(Vector3 position, float damageAmount, bool isCrit)
     {
         Vector3 PopupSpawnPosition = new Vector3(position.x + .4f, position.y + .5f);
 
@@ -28,7 +28,7 @@ public class DamagePopup : MonoBehaviour
         return damagePopupScript;
     }
 
-    public void Setup(int damageAmount, bool isCrit)
+    public void Setup(float damageAmount, bool isCrit)
     {
         if (isCrit)
         {

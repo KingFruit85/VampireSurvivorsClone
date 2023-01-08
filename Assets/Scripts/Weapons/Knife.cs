@@ -12,9 +12,9 @@ public class Knife : MonoBehaviour
     Vector3 Down = new Vector3(0, -1, 0);
     public float Speed = 0.05f;
     float TimeOfBirth;
-    public int damage = 2;
-    int hitEnemies = 0;
-    int numberOfHitEnemiesAllowed = 1;
+    public float Damage;
+    int HitEnemies = 0;
+    int NumberOfHitEnemiesAllowed = 1;
     PlayerController PlayerController;
 
     void Start()
@@ -55,10 +55,10 @@ public class Knife : MonoBehaviour
     {
         if (other.gameObject.TryGetComponent<EnemyHealth>(out var enemyHealth))
         {
-            enemyHealth.TakeDamage(damage);
-            hitEnemies++;
+            enemyHealth.TakeDamage(Damage);
+            HitEnemies++;
 
-            if (hitEnemies == numberOfHitEnemiesAllowed)
+            if (HitEnemies == NumberOfHitEnemiesAllowed)
             {
                 Destroy(gameObject);
             }
@@ -77,6 +77,16 @@ public class Knife : MonoBehaviour
     public void AddSpeed(float speed)
     {
         Speed += speed;
+    }
+
+    public void AddDamage(float newDamage)
+    {
+        Damage = newDamage;
+    }
+
+    public void SetDamage(float damage)
+    {
+        Damage = damage;
     }
 
 }

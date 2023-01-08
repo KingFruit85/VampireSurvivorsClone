@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,11 +10,24 @@ public class Thinkpad : MonoBehaviour
     public float RotationSpeed = 4;
     public float CircleRadius = 1;
     private float angle;
-    public int Damage = 5;
+    public float Damage = 5;
 
-    void Awake()
+    void Start()
     {
         Target = GameObject.FindGameObjectWithTag("Player").transform.position;
+        AttackDamageIncrease.DamageIncrease += AttackDamageIncrease_OnDamageIncrease;
+    }
+
+    void OnDestory()
+    {
+        AttackDamageIncrease.DamageIncrease -= AttackDamageIncrease_OnDamageIncrease;
+    }
+
+    void AttackDamageIncrease_OnDamageIncrease(float increase)
+    {
+        Debug.Log($"Increasing damage for {gameObject.name}");
+        increase = Damage * increase;
+        Damage += increase;
     }
 
     private void LateUpdate()
