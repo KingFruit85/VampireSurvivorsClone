@@ -189,11 +189,12 @@ MonoBehaviour:
   - {fileID: 6073175899078187415, guid: 9e31628291c38c34588e52188594d4e5, type: 3}
   - {fileID: 3367182866794753710, guid: 1b66096947ad926449eed604b7b89a60, type: 3}
   - {fileID: 8223132947474652701, guid: 9ec7b3d7c3a19d8498f49660a3afa2e7, type: 3}
+  Player: {fileID: 505439360}
   Panel: {fileID: 1557180444}
-  OptionOne: {fileID: 516726664}
-  OptionTwo: {fileID: 937310128}
-  OptionThree: {fileID: 1021027530}
-  OptionFour: {fileID: 778028078}
+  Buttons:
+  - {fileID: 516726664}
+  - {fileID: 937310128}
+  - {fileID: 1021027530}
   PickedAbilities: []
 --- !u!4 &42590524
 Transform:
