@@ -190,8 +190,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae7f4e5b4ad1f2498e51ae1893b3c12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AttackDamage: 0
-  AttackCoolDown: 0
+  AttackDamage: 1
+  AttackCoolDown: 1
   TimeOfLastAttack: 0
   IsTouchingPlayer: 0
   PlayerHealth: {fileID: 0}

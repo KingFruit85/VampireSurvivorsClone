@@ -53,6 +53,8 @@ public class ThinkPadWeapon : MonoBehaviour, IAbility
 
     public void LevelUpAbility()
     {
+        CurrentAbilityLevel++;
+
         foreach (var thinkPad in ThinkPads)
         {
             var thinkPadScript = thinkPad.GetComponent<Thinkpad>();
@@ -71,7 +73,6 @@ public class ThinkPadWeapon : MonoBehaviour, IAbility
                     break;
             }
         }
-        CurrentAbilityLevel++;
     }
 
     public int GetAbilityLevel()

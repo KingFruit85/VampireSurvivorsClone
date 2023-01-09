@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +19,22 @@ public class LevelUpPanelManager : MonoBehaviour
     {
         PlayerExperience.LevelUpEvent += PlayerExperience_OnLevelUpEvent;
         PlayerHealth.GameOver += PlayerHealth_OnGameover;
+        KnifeWeapon.MaxAbilityLevelReached += KnifeWeapon_OnMaxAbilityLevelReached;
     }
+
+    void OnDestory()
+    {
+        PlayerExperience.LevelUpEvent -= PlayerExperience_OnLevelUpEvent;
+        PlayerHealth.GameOver -= PlayerHealth_OnGameover;
+        KnifeWeapon.MaxAbilityLevelReached -= KnifeWeapon_OnMaxAbilityLevelReached;
+    }
+
+    void KnifeWeapon_OnMaxAbilityLevelReached(GameObject obj)
+    {
+        Debug.Log($"Max level reached for the knife weapon, object passed is {obj.name}");
+        LevelUpAbilities = LevelUpAbilities.Where(a => a.name != obj.name).ToList();
+    }
+
     void PlayerHealth_OnGameover()
     {
         PlayerExperience.LevelUpEvent -= PlayerExperience_OnLevelUpEvent;
@@ -54,7 +70,6 @@ public class LevelUpPanelManager : MonoBehaviour
         // check if character already has ability
         if (Player.transform.Find(ability.name))
         {
-            Debug.Log("Player already has a ability, leveling it up!");
             abilityLevel = Player.transform.Find(ability.name).GetComponent<IAbility>().GetAbilityLevel() + 1;
         }
 

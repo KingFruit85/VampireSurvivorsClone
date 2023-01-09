@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,7 +15,7 @@ public class Knife : MonoBehaviour
     float TimeOfBirth;
     public float Damage;
     int HitEnemies = 0;
-    int NumberOfHitEnemiesAllowed = 1;
+    public KnifeWeapon KnifeController;
     PlayerController PlayerController;
 
     void Start()
@@ -56,12 +57,12 @@ public class Knife : MonoBehaviour
         if (other.gameObject.TryGetComponent<EnemyHealth>(out var enemyHealth))
         {
             enemyHealth.TakeDamage(Damage);
-            HitEnemies++;
-
-            if (HitEnemies == NumberOfHitEnemiesAllowed)
+            if (HitEnemies == KnifeController.EnemiesKnifeCanPassThrough)
             {
                 Destroy(gameObject);
             }
+            HitEnemies++;
+
         }
     }
 
