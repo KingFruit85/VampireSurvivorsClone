@@ -30,7 +30,6 @@ public class DamageAuraWeapon : MonoBehaviour, IAbility
 
     void AttackDamageIncrease_OnDamageIncrease(float increase)
     {
-        Debug.Log($"Increasing damage for {gameObject.name}");
         increase = Damage * increase;
         Damage += increase;
     }
@@ -81,6 +80,8 @@ public class DamageAuraWeapon : MonoBehaviour, IAbility
 
     public void LevelUpAbility()
     {
+        CurrentAbilityLevel++;
+
         switch (CurrentAbilityLevel)
         {
             case 1:
@@ -94,7 +95,6 @@ public class DamageAuraWeapon : MonoBehaviour, IAbility
                 AuraRadius += 1f;
                 break;
         }
-        CurrentAbilityLevel++;
     }
 
     public int GetAbilityLevel()
