@@ -5,7 +5,9 @@ using UnityEngine;
 public interface IAbility
 {
     public string GetAbilityName();
-    public string GetAbilityDescription();
+    public string GetAbilityDescription(int level);
     public Sprite GetAbilityIcon();
-    public int GetAbilityDamage();
+    public void LevelUpAbility();
+    public int GetAbilityLevel();
+
 }

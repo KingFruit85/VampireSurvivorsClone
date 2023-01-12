@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,12 +9,9 @@ using UnityEngine.UI;
 public class LevelUpPanelManager : MonoBehaviour
 {
     public List<GameObject> LevelUpAbilities;
-
+    public GameObject Player;
     public GameObject Panel;
-    public GameObject OptionOne;
-    public GameObject OptionTwo;
-    public GameObject OptionThree;
-    public GameObject OptionFour;
+    public List<GameObject> Buttons;
 
     public List<GameObject> PickedAbilities;
 
@@ -21,7 +19,22 @@ public class LevelUpPanelManager : MonoBehaviour
     {
         PlayerExperience.LevelUpEvent += PlayerExperience_OnLevelUpEvent;
         PlayerHealth.GameOver += PlayerHealth_OnGameover;
+        KnifeWeapon.MaxAbilityLevelReached += KnifeWeapon_OnMaxAbilityLevelReached;
     }
+
+    void OnDestory()
+    {
+        PlayerExperience.LevelUpEvent -= PlayerExperience_OnLevelUpEvent;
+        PlayerHealth.GameOver -= PlayerHealth_OnGameover;
+        KnifeWeapon.MaxAbilityLevelReached -= KnifeWeapon_OnMaxAbilityLevelReached;
+    }
+
+    void KnifeWeapon_OnMaxAbilityLevelReached(GameObject obj)
+    {
+        Debug.Log($"Max level reached for the knife weapon, object passed is {obj.name}");
+        LevelUpAbilities = LevelUpAbilities.Where(a => a.name != obj.name).ToList();
+    }
+
     void PlayerHealth_OnGameover()
     {
         PlayerExperience.LevelUpEvent -= PlayerExperience_OnLevelUpEvent;
@@ -34,11 +47,13 @@ public class LevelUpPanelManager : MonoBehaviour
 
     public void EnableLevelUpPanel()
     {
+        GetRandomAbilities();
         Panel.SetActive(true);
     }
 
     public void DisableLevelUpPanel()
     {
+        PickedAbilities = new List<GameObject>();
         Panel.SetActive(false);
     }
 
@@ -47,45 +62,43 @@ public class LevelUpPanelManager : MonoBehaviour
         GetRandomAbilities();
     }
 
+    void SetButtonData(GameObject ability, GameObject button)
+    {
+        IAbility thisAbility = ability.transform.GetComponentInChildren<IAbility>();
+        int abilityLevel = 1;
+
+        // check if character already has ability
+        if (Player.transform.Find(ability.name))
+        {
+            abilityLevel = Player.transform.Find(ability.name).GetComponent<IAbility>().GetAbilityLevel() + 1;
+        }
+
+        button.transform.Find("IsAbilityNew").GetComponent<TMP_Text>().text
+            = abilityLevel == 1 ? "New!" : $"Level {abilityLevel.ToString()}";
+
+        button.transform.Find("AbilityName").GetComponent<TMP_Text>().text
+            = thisAbility.GetAbilityName();
+
+        button.transform.Find("AbilityDescription").GetComponent<TMP_Text>().text
+            = thisAbility.GetAbilityDescription(abilityLevel);
+
+        button.transform.Find("AbilityIcon").GetComponent<Image>().sprite
+            = thisAbility.GetAbilityIcon();
+
+    }
+
     void GetRandomAbilities()
     {
         var rng = new System.Random();
 
         PickedAbilities = LevelUpAbilities.OrderBy(a => rng.Next()).ToList().Take(3).ToList();
 
-        // Set first button details
-        OptionOne.transform.Find("AbilityIcon").GetComponent<Image>().sprite =
-        PickedAbilities[0].transform.GetComponent<IAbility>().GetAbilityIcon();
+        int counter = 0;
 
-        OptionOne.transform.Find("AbilityName").GetComponent<TMP_Text>().text =
-        PickedAbilities[0].transform.GetComponent<IAbility>().GetAbilityName();
-
-        OptionOne.transform.Find("AbilityDescription").GetComponent<TMP_Text>().text =
-        PickedAbilities[0].transform.GetComponent<IAbility>().GetAbilityDescription();
-
-        // TODO: Check player object for existing abilities to determine if the New tag should be enabled/disabled
-
-        // Set Second button details
-        OptionTwo.transform.Find("AbilityIcon").GetComponent<Image>().sprite =
-        PickedAbilities[1].transform.GetComponent<IAbility>().GetAbilityIcon();
-
-        OptionTwo.transform.Find("AbilityName").GetComponent<TMP_Text>().text =
-        PickedAbilities[1].transform.GetComponent<IAbility>().GetAbilityName();
-
-        OptionTwo.transform.Find("AbilityDescription").GetComponent<TMP_Text>().text =
-        PickedAbilities[1].transform.GetComponent<IAbility>().GetAbilityDescription();
-
-        // Set Third button details
-        OptionThree.transform.Find("AbilityIcon").GetComponent<Image>().sprite =
-        PickedAbilities[2].transform.GetComponent<IAbility>().GetAbilityIcon();
-
-        OptionThree.transform.Find("AbilityName").GetComponent<TMP_Text>().text =
-        PickedAbilities[2].transform.GetComponent<IAbility>().GetAbilityName();
-
-        OptionThree.transform.Find("AbilityDescription").GetComponent<TMP_Text>().text =
-        PickedAbilities[2].transform.GetComponent<IAbility>().GetAbilityDescription();
-
-        // TODO: Set Forth button details if the players luck is high enough
-
+        foreach (var button in Buttons)
+        {
+            SetButtonData(PickedAbilities[counter], button);
+            counter++;
+        }
     }
 }

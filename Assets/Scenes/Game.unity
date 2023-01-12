@@ -187,12 +187,14 @@ MonoBehaviour:
   LevelUpAbilities:
   - {fileID: 1920806079901204610, guid: fb3606b9c14b1384481225ab80684c55, type: 3}
   - {fileID: 6073175899078187415, guid: 9e31628291c38c34588e52188594d4e5, type: 3}
-  - {fileID: 4116960617599252238, guid: 1b66096947ad926449eed604b7b89a60, type: 3}
+  - {fileID: 3367182866794753710, guid: 1b66096947ad926449eed604b7b89a60, type: 3}
+  - {fileID: 8223132947474652701, guid: 9ec7b3d7c3a19d8498f49660a3afa2e7, type: 3}
+  Player: {fileID: 505439360}
   Panel: {fileID: 1557180444}
-  OptionOne: {fileID: 516726664}
-  OptionTwo: {fileID: 937310128}
-  OptionThree: {fileID: 1021027530}
-  OptionFour: {fileID: 778028078}
+  Buttons:
+  - {fileID: 516726664}
+  - {fileID: 937310128}
+  - {fileID: 1021027530}
   PickedAbilities: []
 --- !u!4 &42590524
 Transform:
@@ -535,7 +537,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 936, y: -5}
+  m_AnchoredPosition: {x: 847, y: -5}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &184813549
@@ -592,7 +594,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 4
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0

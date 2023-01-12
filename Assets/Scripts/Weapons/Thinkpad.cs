@@ -1,27 +1,33 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Thinkpad : MonoBehaviour, IAbility
+public class Thinkpad : MonoBehaviour
 {
-    public Transform Target;
-
-    public float RotationSpeed = 7;
-
-    public float CircleRadius = 1;
-
-    public float ElevationOffset = 0;
-
+    public Vector3 Target;
     private Vector3 positionOffset;
+    public float RotationSpeed = 4;
+    public float CircleRadius = 1;
     private float angle;
-    public int Damage = 5;
-    public Sprite Icon;
-    public const string AbilityName = "ThinkPad";
-    public const string Description = "Circles around the player damaging enemies that touch it";
+    public float Damage = 5;
 
-    void Awake()
+    void Start()
     {
-        Target = GameObject.FindGameObjectWithTag("Player").transform;
+        Target = GameObject.FindGameObjectWithTag("Player").transform.position;
+        AttackDamageIncrease.DamageIncrease += AttackDamageIncrease_OnDamageIncrease;
+    }
+
+    void OnDestory()
+    {
+        AttackDamageIncrease.DamageIncrease -= AttackDamageIncrease_OnDamageIncrease;
+    }
+
+    void AttackDamageIncrease_OnDamageIncrease(float increase)
+    {
+        Debug.Log($"Increasing damage for {gameObject.name}");
+        increase = Damage * increase;
+        Damage += increase;
     }
 
     private void LateUpdate()
@@ -29,9 +35,9 @@ public class Thinkpad : MonoBehaviour, IAbility
         positionOffset.Set(
             Mathf.Cos(angle) * CircleRadius,
             Mathf.Sin(angle) * CircleRadius,
-            ElevationOffset
+            0
         );
-        transform.position = Target.position + positionOffset;
+        transform.position = Target + positionOffset;
         angle += Time.deltaTime * RotationSpeed;
     }
 
@@ -43,23 +49,13 @@ public class Thinkpad : MonoBehaviour, IAbility
         }
     }
 
-    public string GetAbilityName()
+    public void AddSpeed(float speed)
     {
-        return AbilityName;
+        RotationSpeed += speed;
     }
 
-    public string GetAbilityDescription()
+    public void AddRadius(float radius)
     {
-        return Description;
-    }
-
-    public Sprite GetAbilityIcon()
-    {
-        return Icon;
-    }
-
-    public int GetAbilityDamage()
-    {
-        return Damage;
+        CircleRadius += radius;
     }
 }

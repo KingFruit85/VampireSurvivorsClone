@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1053363431232631394}
-  - component: {fileID: 2618156289617834554}
+  - component: {fileID: 6703954507237260417}
   m_Layer: 0
   m_Name: KnifeWeapon
   m_TagString: Untagged
@@ -30,9 +30,9 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2618156289617834554
+--- !u!114 &6703954507237260417
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,11 +41,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 6073175899078187415}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa853790a3f0c1241904a2cad8948f0e, type: 3}
+  m_Script: {fileID: 11500000, guid: fc8d3195b69c1a6438e941bee55624eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Knife: {fileID: 8009230149508712121, guid: b61d46a320556414092bc2808c173758, type: 3}
   Player: {fileID: 0}
-  AttackDelay: 0.5
-  Damage: 2
+  AttackDelay: 1
+  Damage: 4
   Icon: {fileID: 21300000, guid: 5d3f73309cf5f094aa75adbcb8c05dca, type: 3}
+  CurrentAbilityLevel: 1
+  Knives: []
+  Knife: {fileID: 8009230149508712121, guid: b61d46a320556414092bc2808c173758, type: 3}

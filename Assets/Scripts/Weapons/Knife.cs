@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,11 +13,11 @@ public class Knife : MonoBehaviour
     Vector3 Down = new Vector3(0, -1, 0);
     public float Speed = 0.05f;
     float TimeOfBirth;
-    public int damage = 2;
-
+    public float Damage;
+    int HitEnemies = 0;
+    public KnifeWeapon KnifeController;
     PlayerController PlayerController;
 
-    // Start is called before the first frame update
     void Start()
     {
         PlayerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
@@ -55,7 +56,13 @@ public class Knife : MonoBehaviour
     {
         if (other.gameObject.TryGetComponent<EnemyHealth>(out var enemyHealth))
         {
-           enemyHealth.TakeDamage(damage);
+            enemyHealth.TakeDamage(Damage);
+            if (HitEnemies == KnifeController.EnemiesKnifeCanPassThrough)
+            {
+                Destroy(gameObject);
+            }
+            HitEnemies++;
+
         }
     }
 
@@ -67,4 +74,20 @@ public class Knife : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    public void AddSpeed(float speed)
+    {
+        Speed += speed;
+    }
+
+    public void AddDamage(float newDamage)
+    {
+        Damage = newDamage;
+    }
+
+    public void SetDamage(float damage)
+    {
+        Damage = damage;
+    }
+
 }

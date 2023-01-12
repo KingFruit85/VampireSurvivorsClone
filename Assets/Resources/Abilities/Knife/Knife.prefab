@@ -100,7 +100,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 0.05
-  damage: 2
+  Damage: 2
+  KnifeController: {fileID: 6703954507237260417, guid: 9e31628291c38c34588e52188594d4e5, type: 3}
 --- !u!50 &63254104422092303
 Rigidbody2D:
   serializedVersion: 4
