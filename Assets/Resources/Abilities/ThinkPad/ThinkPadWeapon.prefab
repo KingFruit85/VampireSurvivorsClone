@@ -45,7 +45,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentAbilityLevel: 1
+  MaxAbilityLevel: 9
   Icon: {fileID: 21300000, guid: 423f1e366d96fba40af70bc841765c7b, type: 3}
-  ThinkPad: {fileID: 763777251402027155, guid: 6e605d9e97cf98841b882a158b8c9bcb, type: 3}
+  ThinkPadObject: {fileID: 763777251402027155, guid: 6e605d9e97cf98841b882a158b8c9bcb, type: 3}
   ThinkPads: []
   Player: {fileID: 0}
+  ThinkPadRespawnTime: 3

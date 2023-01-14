@@ -5,16 +5,24 @@ using UnityEngine;
 
 public class Thinkpad : MonoBehaviour
 {
-    public Vector3 Target;
-    private Vector3 positionOffset;
+    public GameObject Player;
+    private Vector3 PositionOffset;
+    public ThinkPadWeapon ThinkPadWeapon;
     public float RotationSpeed = 4;
     public float CircleRadius = 1;
-    private float angle;
+    private float Angle;
+    public int HitsDealt = 0;
+    public int HitsMax = 5;
     public float Damage = 5;
+    public static event Action<GameObject> HitLimitReached;
 
+
+    void Awake()
+    {
+        Player = GameObject.FindGameObjectWithTag("Player");
+    }
     void Start()
     {
-        Target = GameObject.FindGameObjectWithTag("Player").transform.position;
         AttackDamageIncrease.DamageIncrease += AttackDamageIncrease_OnDamageIncrease;
     }
 
@@ -25,27 +33,37 @@ public class Thinkpad : MonoBehaviour
 
     void AttackDamageIncrease_OnDamageIncrease(float increase)
     {
-        Debug.Log($"Increasing damage for {gameObject.name}");
         increase = Damage * increase;
         Damage += increase;
     }
 
     private void LateUpdate()
     {
-        positionOffset.Set(
-            Mathf.Cos(angle) * CircleRadius,
-            Mathf.Sin(angle) * CircleRadius,
+        PositionOffset.Set(
+            Mathf.Cos(Angle) * CircleRadius,
+            Mathf.Sin(Angle) * CircleRadius,
             0
         );
-        transform.position = Target + positionOffset;
-        angle += Time.deltaTime * RotationSpeed;
+        transform.position = Player.transform.position + PositionOffset;
+        Angle += Time.deltaTime * RotationSpeed;
     }
+
+    void Update()
+    {
+        if (HitsDealt >= HitsMax)
+        {
+            HitLimitReached?.Invoke(gameObject);
+        }
+    }
+
+
 
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.TryGetComponent<EnemyHealth>(out var enemyHealth))
         {
             enemyHealth.TakeDamage(Damage);
+            HitsDealt++;
         }
     }
 
