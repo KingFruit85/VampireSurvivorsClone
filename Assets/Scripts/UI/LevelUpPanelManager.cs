@@ -12,26 +12,27 @@ public class LevelUpPanelManager : MonoBehaviour
     public GameObject Player;
     public GameObject Panel;
     public List<GameObject> Buttons;
-
     public List<GameObject> PickedAbilities;
 
     void Start()
     {
         PlayerExperience.LevelUpEvent += PlayerExperience_OnLevelUpEvent;
         PlayerHealth.GameOver += PlayerHealth_OnGameover;
-        KnifeWeapon.MaxAbilityLevelReached += KnifeWeapon_OnMaxAbilityLevelReached;
+        KnifeWeapon.MaxAbilityLevelReached += OnMaxAbilityLevelReached;
+        ThinkPadWeapon.MaxAbilityLevelReached += OnMaxAbilityLevelReached;
+
     }
 
     void OnDestory()
     {
         PlayerExperience.LevelUpEvent -= PlayerExperience_OnLevelUpEvent;
         PlayerHealth.GameOver -= PlayerHealth_OnGameover;
-        KnifeWeapon.MaxAbilityLevelReached -= KnifeWeapon_OnMaxAbilityLevelReached;
+        KnifeWeapon.MaxAbilityLevelReached -= OnMaxAbilityLevelReached;
+        ThinkPadWeapon.MaxAbilityLevelReached -= OnMaxAbilityLevelReached;
     }
 
-    void KnifeWeapon_OnMaxAbilityLevelReached(GameObject obj)
+    void OnMaxAbilityLevelReached(GameObject obj)
     {
-        Debug.Log($"Max level reached for the knife weapon, object passed is {obj.name}");
         LevelUpAbilities = LevelUpAbilities.Where(a => a.name != obj.name).ToList();
     }
 

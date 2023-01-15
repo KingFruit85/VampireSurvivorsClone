@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2014166724816725349
 Transform:
   m_ObjectHideFlags: 0
@@ -80,8 +80,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 268f45af2fb682840a544fc9921c9317, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TimeOfLastAttack: 0
-  damage: 5
+  Damage: 10
+  Icon: {fileID: 0}
+  AuraRadius: 2
+  CurrentAbilityLevel: 1
 --- !u!1 &8965032950037079526
 GameObject:
   m_ObjectHideFlags: 0
@@ -118,7 +120,7 @@ Transform:
   m_Children:
   - {fileID: 2014166724816725349}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8965032950037079529
 SpriteRenderer:
@@ -227,6 +229,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentExperience: 0
+  XPToNextLevelUp: 0
 --- !u!114 &7023697029960954534
 MonoBehaviour:
   m_ObjectHideFlags: 0

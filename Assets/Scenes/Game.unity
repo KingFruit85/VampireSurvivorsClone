@@ -5105,30 +5105,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 155345955, guid: d5cb57a00c31bea46be60d363a63aa7a, type: 3}
-      propertyPath: Damage
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 384395289, guid: d5cb57a00c31bea46be60d363a63aa7a, type: 3}
-      propertyPath: MainCamera
-      value: 
-      objectReference: {fileID: 519420031}
-    - target: {fileID: 1880969784, guid: d5cb57a00c31bea46be60d363a63aa7a, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1880969784, guid: d5cb57a00c31bea46be60d363a63aa7a, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4028362655268517595, guid: d5cb57a00c31bea46be60d363a63aa7a, type: 3}
-      propertyPath: LevelUpPanel
-      value: 
-      objectReference: {fileID: 1557180444}
-    - target: {fileID: 6917789802779613328, guid: d5cb57a00c31bea46be60d363a63aa7a, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8965032950037079526, guid: d5cb57a00c31bea46be60d363a63aa7a, type: 3}
       propertyPath: m_Name
       value: Player

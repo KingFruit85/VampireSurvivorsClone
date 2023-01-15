@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,26 +6,63 @@ using UnityEngine;
 public class ThinkPadWeapon : MonoBehaviour, IAbility
 {
     public int CurrentAbilityLevel = 1;
+    public int MaxAbilityLevel = 9;
     public const string AbilityName = "ThinkPad";
     const string LevelOneDescription = "A strange object circles around the player damaging enemies that touch it";
     const string LevelTwoDescription = "Another strange object appears";
     const string LevelThreeDescription = "The objects get faster and further away";
     public Sprite Icon;
-    public GameObject ThinkPad;
+    public GameObject ThinkPadObject;
     public List<GameObject> ThinkPads;
     public GameObject Player;
+    public static event Action<GameObject> MaxAbilityLevelReached;
+    public float ThinkPadRespawnTime = 3f; // this should probably be an event
+    private float Radius = 1f;
+
 
     void Awake()
     {
+        Thinkpad.HitLimitReached += Thinkpad_OnHitLimitReached;
         Player = GameObject.FindGameObjectWithTag("Player");
-        AddThinkPadToOrbit();
+        ThinkPads.Add(ThinkPadObject);
+        ThinkPads.Add(ThinkPadObject);
+        ThinkPads.Add(ThinkPadObject);
+        ThinkPads.Add(ThinkPadObject);
+        SetupOrbit(ThinkPads);
     }
 
-    void AddThinkPadToOrbit()
+    void SetupOrbit(List<GameObject> thinkPads)
     {
-        GameObject newPad = Instantiate(ThinkPad, Player.transform.position, Quaternion.identity, Player.transform);
-        newPad.name = ThinkPad.name;
-        ThinkPads.Add(newPad);
+        for (int i = 0; i < thinkPads.Count; i++)
+        {
+            float angle = i * Mathf.PI * 2 / ThinkPads.Count;
+            Vector3 pos = new Vector3(Mathf.Cos(angle), 0, Mathf.Sin(angle)) * Radius;
+            GameObject thinkPad = Instantiate(ThinkPadObject, pos, Quaternion.identity, Player.transform);
+            // ThinkPads[i].transform.position = pos;
+        }
+    }
+
+    void Thinkpad_OnHitLimitReached(GameObject thinkPad)
+    {
+        thinkPad.GetComponent<Thinkpad>().HitsDealt = 0;
+        StartCoroutine(TemporarilyDisableNotebook(thinkPad));
+    }
+
+    IEnumerator TemporarilyDisableNotebook(GameObject thinkPad)
+    {
+        thinkPad.SetActive(false);
+        yield return new WaitForSeconds(ThinkPadRespawnTime);
+        thinkPad.SetActive(true);
+    }
+
+    void AddThinkPadToOrbit(int count = 1)
+    {
+        for (int i = 0; i <= count; i++)
+        {
+            GameObject newPad = Instantiate(ThinkPadObject, Player.transform.position, Quaternion.identity, Player.transform);
+            newPad.name = ThinkPadObject.name;
+            ThinkPads.Add(newPad);
+        }
     }
 
     public string GetAbilityName()
@@ -41,6 +79,12 @@ public class ThinkPadWeapon : MonoBehaviour, IAbility
             case 1: Description = LevelOneDescription; break;
             case 2: Description = LevelTwoDescription; break;
             case 3: Description = LevelThreeDescription; break;
+            case 4: Description = LevelThreeDescription; break;
+            case 5: Description = LevelThreeDescription; break;
+            case 6: Description = LevelThreeDescription; break;
+            case 7: Description = LevelThreeDescription; break;
+            case 8: Description = LevelThreeDescription; break;
+            case 9: Description = LevelThreeDescription; break;
         }
 
         return Description;
@@ -55,23 +99,76 @@ public class ThinkPadWeapon : MonoBehaviour, IAbility
     {
         CurrentAbilityLevel++;
 
-        foreach (var thinkPad in ThinkPads)
+        Thinkpad thinkPadScript;
+
+        switch (CurrentAbilityLevel)
         {
-            var thinkPadScript = thinkPad.GetComponent<Thinkpad>();
-            switch (CurrentAbilityLevel)
-            {
-                case 1:
-                    break;
+            case 1:
+                break;
 
-                case 2:
-                    AddThinkPadToOrbit();
-                    break;
+            case 2:
+                AddThinkPadToOrbit();
+                break;
 
-                case 3:
-                    thinkPadScript.AddSpeed(2f);
-                    thinkPadScript.AddRadius(1f);
-                    break;
-            }
+            case 3:
+                AddThinkPadToOrbit();
+                foreach (var thinkpad in ThinkPads)
+                {
+                    thinkPadScript = thinkpad.GetComponent<Thinkpad>();
+                    thinkPadScript.AddSpeed(.2f);
+                    thinkPadScript.AddRadius(.2f);
+                }
+                break;
+            case 4:
+                AddThinkPadToOrbit();
+                foreach (var thinkpad in ThinkPads)
+                {
+                    thinkPadScript = thinkpad.GetComponent<Thinkpad>();
+                    thinkPadScript.AddSpeed(.2f);
+                }
+                break;
+            case 5:
+                AddThinkPadToOrbit();
+                foreach (var thinkpad in ThinkPads)
+                {
+                    thinkPadScript = thinkpad.GetComponent<Thinkpad>();
+                    thinkPadScript.AddSpeed(.2f);
+                }
+                break;
+            case 6:
+                AddThinkPadToOrbit();
+                foreach (var thinkpad in ThinkPads)
+                {
+                    thinkPadScript = thinkpad.GetComponent<Thinkpad>();
+                    thinkPadScript.AddSpeed(.2f);
+                    // thinkPadScript.AddRadius(.2f);
+                }
+                break;
+            case 7:
+                AddThinkPadToOrbit();
+                foreach (var thinkpad in ThinkPads)
+                {
+                    thinkPadScript = thinkpad.GetComponent<Thinkpad>();
+                    thinkPadScript.AddSpeed(.2f);
+                }
+                break;
+            case 8:
+                AddThinkPadToOrbit();
+                foreach (var thinkpad in ThinkPads)
+                {
+                    thinkPadScript = thinkpad.GetComponent<Thinkpad>();
+                    thinkPadScript.AddSpeed(.2f);
+                }
+                break;
+            case 9:
+                MaxAbilityLevelReached?.Invoke(gameObject);
+                AddThinkPadToOrbit();
+                foreach (var thinkpad in ThinkPads)
+                {
+                    thinkPadScript = thinkpad.GetComponent<Thinkpad>();
+                    thinkPadScript.AddSpeed(.2f);
+                }
+                break;
         }
     }
 
