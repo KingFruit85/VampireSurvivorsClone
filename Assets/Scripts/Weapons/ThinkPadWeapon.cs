@@ -24,8 +24,22 @@ public class ThinkPadWeapon : MonoBehaviour, IAbility
     {
         Thinkpad.HitLimitReached += Thinkpad_OnHitLimitReached;
         Player = GameObject.FindGameObjectWithTag("Player");
-        AddThinkPadToOrbit(4);
-        EvenlySpaceActiveThinkpads(); // call if number of thinkpads in orbit change
+        ThinkPads.Add(ThinkPadObject);
+        ThinkPads.Add(ThinkPadObject);
+        ThinkPads.Add(ThinkPadObject);
+        ThinkPads.Add(ThinkPadObject);
+        SetupOrbit(ThinkPads);
+    }
+
+    void SetupOrbit(List<GameObject> thinkPads)
+    {
+        for (int i = 0; i < thinkPads.Count; i++)
+        {
+            float angle = i * Mathf.PI * 2 / ThinkPads.Count;
+            Vector3 pos = new Vector3(Mathf.Cos(angle), 0, Mathf.Sin(angle)) * Radius;
+            GameObject thinkPad = Instantiate(ThinkPadObject, pos, Quaternion.identity, Player.transform);
+            // ThinkPads[i].transform.position = pos;
+        }
     }
 
     void Thinkpad_OnHitLimitReached(GameObject thinkPad)
@@ -48,16 +62,6 @@ public class ThinkPadWeapon : MonoBehaviour, IAbility
             GameObject newPad = Instantiate(ThinkPadObject, Player.transform.position, Quaternion.identity, Player.transform);
             newPad.name = ThinkPadObject.name;
             ThinkPads.Add(newPad);
-        }
-    }
-
-    void EvenlySpaceActiveThinkpads()
-    {
-        for (int i = 0; i < ThinkPads.Count; i++)
-        {
-            float angle = i * Mathf.PI * 2 / ThinkPads.Count;
-            Vector3 pos = new Vector3(Mathf.Cos(angle), 0, Mathf.Sin(angle)) * Radius;
-            ThinkPads[i].transform.position = pos;
         }
     }
 
@@ -111,7 +115,7 @@ public class ThinkPadWeapon : MonoBehaviour, IAbility
                 foreach (var thinkpad in ThinkPads)
                 {
                     thinkPadScript = thinkpad.GetComponent<Thinkpad>();
-                    thinkPadScript.AddSpeed(1f);
+                    thinkPadScript.AddSpeed(.2f);
                     thinkPadScript.AddRadius(.2f);
                 }
                 break;
@@ -120,7 +124,7 @@ public class ThinkPadWeapon : MonoBehaviour, IAbility
                 foreach (var thinkpad in ThinkPads)
                 {
                     thinkPadScript = thinkpad.GetComponent<Thinkpad>();
-                    thinkPadScript.AddSpeed(1f);
+                    thinkPadScript.AddSpeed(.2f);
                 }
                 break;
             case 5:
@@ -128,7 +132,7 @@ public class ThinkPadWeapon : MonoBehaviour, IAbility
                 foreach (var thinkpad in ThinkPads)
                 {
                     thinkPadScript = thinkpad.GetComponent<Thinkpad>();
-                    thinkPadScript.AddSpeed(1f);
+                    thinkPadScript.AddSpeed(.2f);
                 }
                 break;
             case 6:
@@ -136,8 +140,8 @@ public class ThinkPadWeapon : MonoBehaviour, IAbility
                 foreach (var thinkpad in ThinkPads)
                 {
                     thinkPadScript = thinkpad.GetComponent<Thinkpad>();
-                    thinkPadScript.AddSpeed(1f);
-                    thinkPadScript.AddRadius(.2f);
+                    thinkPadScript.AddSpeed(.2f);
+                    // thinkPadScript.AddRadius(.2f);
                 }
                 break;
             case 7:
@@ -145,7 +149,7 @@ public class ThinkPadWeapon : MonoBehaviour, IAbility
                 foreach (var thinkpad in ThinkPads)
                 {
                     thinkPadScript = thinkpad.GetComponent<Thinkpad>();
-                    thinkPadScript.AddSpeed(1f);
+                    thinkPadScript.AddSpeed(.2f);
                 }
                 break;
             case 8:
@@ -153,7 +157,7 @@ public class ThinkPadWeapon : MonoBehaviour, IAbility
                 foreach (var thinkpad in ThinkPads)
                 {
                     thinkPadScript = thinkpad.GetComponent<Thinkpad>();
-                    thinkPadScript.AddSpeed(1f);
+                    thinkPadScript.AddSpeed(.2f);
                 }
                 break;
             case 9:
@@ -162,7 +166,7 @@ public class ThinkPadWeapon : MonoBehaviour, IAbility
                 foreach (var thinkpad in ThinkPads)
                 {
                     thinkPadScript = thinkpad.GetComponent<Thinkpad>();
-                    thinkPadScript.AddSpeed(2f);
+                    thinkPadScript.AddSpeed(.2f);
                 }
                 break;
         }

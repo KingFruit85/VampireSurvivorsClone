@@ -56,8 +56,6 @@ public class Thinkpad : MonoBehaviour
         }
     }
 
-
-
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.TryGetComponent<EnemyHealth>(out var enemyHealth))
