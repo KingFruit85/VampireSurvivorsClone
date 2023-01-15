@@ -100,12 +100,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
   ThinkPadWeapon: {fileID: 3367182866794753708, guid: 1b66096947ad926449eed604b7b89a60, type: 3}
-  RotationSpeed: 4
+  RotationSpeed: 2
   CircleRadius: 1
   HitsDealt: 0
   HitsMax: 5
   Damage: 5
-  RespawnTime: 0
 --- !u!61 &2154666758450426318
 BoxCollider2D:
   m_ObjectHideFlags: 0
